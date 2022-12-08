@@ -1,11 +1,12 @@
 class Employee:
-    def __init__(self, name, salary = 0, pay_rate = 0, contract_hours = 0, commission_contracts = 0, bonus_commission=0):
+    def __init__(self, name, salary = 0, pay_rate = 0, contract_hours = 0, commission_contracts = 0, bonus_commission=0, commision_rate =0):
         self.name = name
         self.pay_rate = pay_rate
         self.salary = salary
         self.contract_hours = contract_hours
         self.commission_contracts = commission_contracts
         self.bonus_commission = bonus_commission
+        self.commision_rate = commision_rate
 
     def get_pay(self):
         pay = 0
@@ -27,6 +28,8 @@ class Employee:
             s += f'a contract of {self.contract_hours} hours at {self.pay_rate}/hour'
         if self.commission_contracts and self.pay_rate:
             s += f'a commission for {self.commission_contracts} contract(s) at {self.pay_rate}/contract'
+        if self.commission_contracts and self.commision_rate:
+            s += f'a commission for {self.commission_contracts} contract(s) at {self.pay_rate}/contract'
         if self.bonus_commission:
             s += f'receives a bonus commission of {self.bonus_commission}'
         s += f'\nTheir total pay is {self.get_pay()}.'
@@ -42,7 +45,7 @@ charlie = Employee('Charlie', pay_rate=25, contract_hours=100)
 renee = Employee('Renee', pay_rate=200, salary=3000, commission_contracts=4)
 
 # Jan works on a contract of 150 hours at 25/hour and receives a commission for 3 contract(s) at 220/contract.  Their total pay is 4410.
-jan = Employee('Jan', pay_rate=220, contract_hours=150, commission_contracts=3)
+jan = Employee('Jan', pay_rate=25, contract_hours=150, commission_contracts=3, commision_rate= 220)
 
 # Robbie works on a monthly salary of 2000 and receives a bonus commission of 1500.  Their total pay is 3500.
 robbie = Employee('Robbie', salary=2000, bonus_commission=1500)
