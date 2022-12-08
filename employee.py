@@ -10,7 +10,32 @@ class Employee:
 
     def __str__(self):
         return self.name
+    
+# Salary Employee without commission
+class SalaryEmployeeWithoutCommission(Employee):
+    def __init__(self, name, salary):
+        super().__init__(name)
+        self.salary = salary
 
+    def get_pay(self):
+        return self.salary
+
+    def __str__(self):
+        return f"{self.name} works on a monthly salary of {self.salary}. Their total pay is {self.salary}."
+
+
+# Hourly Employee without commission
+class HourlyEmployeeWithoutCommission(Employee):
+    def __init__(self, name, hourly_wage, hours_worked):
+        super().__init__(name)
+        self.hourly_wage = hourly_wage
+        self.hours_worked = hours_worked
+
+    def get_pay(self):
+        return self.hourly_wage * self.hours_worked
+
+    def __str__(self):
+        return f"{self.name} works on an hourly wage of {self.hourly_wage} and has worked {self.hours_worked} hours."
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
 billie = Employee('Billie')
