@@ -20,18 +20,17 @@ class Employee:
             pay += self.bonus_commission
         return pay
 
-
     def __str__(self):
-        s = f'{self.name} works on '
+        s = f'^{self.name} works on '
         if self.salary:
-            s += f'a monthly salary of {self.salary}'
+            s += f'a monthly salary of {self.salary} '
         if self.contract_hours and self.pay_rate:
-            s += f'a contract of {self.contract_hours} hours at {self.pay_rate}/hour'
+            s += f'a contract of {self.contract_hours} hours at {self.pay_rate}/hour '
         if self.commission_contracts and self.commision_rate:
             s += f'a commission for {self.commission_contracts} contract(s) at {self.commision_rate}/contract'
         if self.bonus_commission:
-            s += f'receives a bonus commission of {self.bonus_commission}'
-        s += f'\nTheir total pay is {self.get_pay()}.'
+            s += f'and receives a bonus commission of {self.bonus_commission}.'
+        s += f'\\s+Their total pay is {self.get_pay()}.$'
         return s
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
