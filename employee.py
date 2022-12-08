@@ -1,7 +1,7 @@
 import re
 
 class Employee:
-    def __init__(self, name, pay_rate, salary=None, contract_hours=None, commission_contracts=None, bonus_commission=None):
+    def __init__(self, name, pay_rate = None, salary=None, contract_hours=None, commission_contracts=None, bonus_commission=None):
         self.name = name
         self.pay_rate = pay_rate
         self.salary = salary
