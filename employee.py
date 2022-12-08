@@ -1,6 +1,3 @@
-"""Employee pay calculator."""
-"""ENTER YOUR SOLUTION HERE!"""
-
 class Employee:
     def __init__(self, name, salary=0, contract=0, commission=0, bonus=0, hourly_rate=0, hours=0):
         self.name = name
@@ -11,13 +8,11 @@ class Employee:
         self.hourly_rate = hourly_rate
         self.hours = hours
 
-
     def get_pay(self):
          return self.salary + (self.contract * self.commission) + self.bonus + (self.hours * self.hourly_rate)
         
-
     def __str__(self):
-        return self.name + ' works on a ' + ('monthly salary' if self.contract == 0 else 'contract of ' + str(self.contract) + ' hours at ' + str(self.salary) + '/hour') + (' and receives a commission for ' + str(self.contract) + ' contract(s) at ' + str(self.commission) + '/contract' if self.commission != 0 else '') + (' and receives a bonus commission of ' + str(self.bonus) if self.bonus != 0 else '') + '. Their total pay is ' + str(self.pay) + '.'
+        return self.name + ' works on a ' + ('monthly salary' if self.contract == 0 else 'contract of ' + str(self.contract) + ' hours at ' + str(self.salary) + '/hour') + (' and receives a commission for ' + str(self.contract) + ' contract(s) at ' + str(self.commission) + '/contract' if self.commission != 0 else '') + (' and receives a bonus commission of ' + str(self.bonus) if self.bonus != 0 else '') + '. Their total pay is ' + str(self.get_pay()) + '.'
 
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
