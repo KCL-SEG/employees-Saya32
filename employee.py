@@ -1,5 +1,3 @@
-import re
-
 class Employee:
     def __init__(self, name, pay_rate = None, salary=None, contract_hours=None, commission_contracts=None, bonus_commission=None):
         self.name = name
